@@ -33,7 +33,7 @@ For the best experience:
 ## 📦 How to Run
 
 Just open the website:
-👉 https://your-username.github.io/your-repo-name/
+👉 https://unknownscp207.github.io/flower-for-johan/
 
 ---
 
