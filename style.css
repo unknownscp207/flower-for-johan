@@ -2,102 +2,64 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: sans-serif;
-    background: black;
+    background: #050505;
+    font-family: 'Press Start 2P', cursive;
 }
 
-/* CANVAS */
 canvas {
     position: absolute;
     top: 0;
     left: 0;
-    display: block;
 }
-
-/* CONTAINER */
-.container {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-}
-
-/* ========================= */
-/* START SCREEN */
-/* ========================= */
 
 .start-screen {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: radial-gradient(circle, #0a0a1a, #000);
+    background: black;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 5;
     text-align: center;
+    z-index: 5;
     cursor: pointer;
-    transition: opacity 1s ease;
+    transition: opacity 0.8s ease;
 }
 
 .start-content h2 {
-    font-size: 2rem;
-    margin: 0;
-    text-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+    font-size: 12px;
+    line-height: 1.6;
 }
 
 .tap-note {
-    margin-top: 15px;
-    font-size: 0.9rem;
-    opacity: 0.6;
+    margin-top: 20px;
+    font-size: 8px;
+    animation: blink 1s infinite;
 }
 
-/* ========================= */
-/* OVERLAY TEXT */
-/* ========================= */
+@keyframes blink {
+    0%,100% {opacity:1;}
+    50% {opacity:0;}
+}
 
 .overlay {
     position: fixed;
-    top: 12%;
+    top: 8%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     color: white;
-    z-index: 2;
-    pointer-events: none;
     opacity: 0;
     transition: opacity 2s ease;
 }
 
 .overlay h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    text-shadow: 
-        0 0 20px rgba(255, 182, 193, 0.8),
-        0 0 40px rgba(255, 105, 180, 0.4);
+    font-size: 10px;
 }
 
 .overlay p {
-    font-size: 1.1rem;
-    margin-top: 8px;
-    opacity: 0.85;
-}
-
-/* ========================= */
-/* MOBILE */
-/* ========================= */
-
-@media (max-width: 768px) {
-    .start-content h2 {
-        font-size: 1.5rem;
-        padding: 0 20px;
-    }
-
-    .overlay h1 {
-        font-size: 1.8rem;
-    }
-
-    .overlay p {
-        font-size: 1rem;
-    }
+    font-size: 8px;
+    margin-top: 10px;
+    opacity: 0.7;
 }
