@@ -3,35 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>For You 🤍</title>
+
+  <!-- PIXEL FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-<!-- START SCREEN -->
 <div class="start-screen" id="startScreen">
   <div class="start-content">
-    <h2>Here a lil gift for ya, Johan 🤍</h2>
-    <p class="tap-note">tap anywhere to open</p>
+    <h2>Here a lil gift for ya, Johan</h2>
+    <p class="tap-note">PRESS TO START</p>
   </div>
 </div>
 
 <div class="container">
     <canvas id="canvas"></canvas>
 
-    <!-- TEXT ATAS -->
     <div class="overlay" id="overlay">
-      <h1>Happy Mensiversary, Sayang 🤍</h1>
-      <p>These flowers bloom just for you.</p>
+      <h1>HAPPY MENSIVERSARY</h1>
+      <p>These flowers bloom for you.</p>
     </div>
 
-    <!-- AUDIO -->
     <audio id="bgm" loop>
       <source src="Sweet - Cigarettes After Sex.mp3" type="audio/mpeg">
     </audio>
 </div>
 
-<!-- SHADER (PASTE PUNYA LU DI SINI, JANGAN DIUBAH) -->
+<!-- ✅ SHADER SUDAH KEISI -->
 <script type="x-shader/x-fragment" id="fragmentShader">
 #define PI 3.14159265359
 
@@ -113,7 +114,6 @@ void main() {
 
 <script type="module" src="./script.js"></script>
 
-<!-- START + MUSIC -->
 <script>
 const startScreen = document.getElementById("startScreen");
 const overlay = document.getElementById("overlay");
@@ -121,7 +121,6 @@ const bgm = document.getElementById("bgm");
 
 startScreen.addEventListener("click", () => {
 
-  // fade in music
   bgm.volume = 0;
   bgm.play();
 
@@ -132,16 +131,10 @@ startScreen.addEventListener("click", () => {
     if (vol >= 0.5) clearInterval(fade);
   }, 200);
 
-  // animasi masuk
   startScreen.style.opacity = "0";
 
-  setTimeout(() => {
-    startScreen.style.display = "none";
-  }, 800);
-
-  setTimeout(() => {
-    overlay.style.opacity = "1";
-  }, 1200);
+  setTimeout(() => startScreen.style.display = "none", 800);
+  setTimeout(() => overlay.style.opacity = "1", 1200);
 });
 </script>
 
