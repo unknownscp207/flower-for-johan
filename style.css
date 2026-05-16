@@ -6,11 +6,16 @@ html, body {
     font-family: 'Press Start 2P', cursive;
 }
 
+/* CANVAS */
 canvas {
     position: absolute;
     top: 0;
     left: 0;
 }
+
+/* ========================= */
+/* START SCREEN */
+/* ========================= */
 
 .start-screen {
     position: fixed;
@@ -29,19 +34,26 @@ canvas {
 
 .start-content h2 {
     font-size: 12px;
-    line-height: 1.6;
+    line-height: 1.8;
+    letter-spacing: 1px;
 }
 
 .tap-note {
     margin-top: 20px;
     font-size: 8px;
+    opacity: 0.8;
+    letter-spacing: 1px;
     animation: blink 1s infinite;
 }
 
 @keyframes blink {
-    0%,100% {opacity:1;}
-    50% {opacity:0;}
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
+
+/* ========================= */
+/* OVERLAY TEXT */
+/* ========================= */
 
 .overlay {
     position: fixed;
@@ -56,10 +68,40 @@ canvas {
 
 .overlay h1 {
     font-size: 10px;
+    line-height: 1.8;
+    letter-spacing: 1px;
 }
 
 .overlay p {
     font-size: 8px;
     margin-top: 10px;
     opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+/* ========================= */
+/* MOBILE FIX */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .start-content h2 {
+        font-size: 16px;
+        line-height: 1.8;
+        padding: 0 20px;
+    }
+
+    .tap-note {
+        font-size: 10px;
+    }
+
+    .overlay h1 {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .overlay p {
+        font-size: 11px;
+    }
+
 }
